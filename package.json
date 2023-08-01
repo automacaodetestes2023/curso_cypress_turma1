@@ -1,0 +1,15 @@
+{
+  "name": "curso_turma_1",
+  "version": "1.0.0",
+  "description": "curso_turma_1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/automacaodetestes2023/curso_cypress_turma1.git"
+  },
+  "author": "Thiago de Souza",
+  "license": "MIT"
+}
