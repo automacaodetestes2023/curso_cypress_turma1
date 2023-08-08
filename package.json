@@ -11,5 +11,9 @@
     "url": "git+https://github.com/automacaodetestes2023/curso_cypress_turma1.git"
   },
   "author": "Thiago de Souza",
-  "license": "MIT"
+  "license": "MIT",
+  
+  "devDependencies": {
+    "cypress": "^12.17.3"
+  }
 }
