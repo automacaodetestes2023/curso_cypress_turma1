@@ -39,5 +39,5 @@ describe('Cadastro de entregador para Buger Eats', () => {
 
         Deliver.validarCadastro()
     })
-   
+       
 })

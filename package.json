@@ -4,7 +4,10 @@
   "description": "Curso de Cypress turma 1",
   "main": "index.js",
   "scripts": {
-    "open": "npx cypress open"
+    "open": "npx cypress open",
+    "testes": "cypress run --headless --browser chrome",
+    "suite": "cypress run --headless --browser chrome --spec cypress/e2e/cadastro.cy.js"
+
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,8 @@
   "author": "Thiago de Souza",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^12.17.4"
+    "cypress": "^12.17.4",
+    "cypress-mochawesome-reporter": "^3.6.0"
   },
   "dependencies": {
     "faker-br": "^0.4.1"
