@@ -7,15 +7,15 @@ import Utilidades from "../support/utilidades"
 
 describe('Cadastro de entregador para Buger Eats', () => {
 
+    beforeEach(() => {
+        Home.acessarHomeBugerEats(`${Cypress.env('urlBase')}`)
+        Home.acessarTelaCadastro()
+    })
 
     it('Deve efetuar cadastro inserindo CNH com método de entrega Moto', () => {
 
         const dadosUsuario = Utilidades.gerarDadosFakerUsuario()
-        const dadosEndereco = Utilidades.gerarDadosFakerEndereco()               
-            
-        Home.acessarHomeBugerEats("https://buger-eats.vercel.app/")
-
-        Home.acessarTelaCadastro()
+        const dadosEndereco = Utilidades.gerarDadosFakerEndereco()
 
         Deliver.preencherDadosUsuario({
             nomeCompleto: dadosUsuario.nomeCompleto,
@@ -28,7 +28,7 @@ describe('Cadastro de entregador para Buger Eats', () => {
             cep: dadosEndereco.cep,
             numero: dadosEndereco.numero,
             complemento: dadosEndereco.complemento
-        })        
+        })
 
         Deliver.selecionarMetodoEntrega('Moto')
 
@@ -39,5 +39,5 @@ describe('Cadastro de entregador para Buger Eats', () => {
 
         Deliver.validarCadastro()
     })
-
+   
 })
