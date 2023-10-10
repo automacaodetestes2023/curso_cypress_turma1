@@ -39,5 +39,60 @@ describe('Cadastro de entregador para Buger Eats', () => {
 
         Deliver.validarCadastro()
     })
-       
+
+    it('Deve efetuar cadastro inserindo CNH com método de entrega Bicicleta', () => {
+
+        const dadosUsuario = Utilidades.gerarDadosFakerUsuario()
+        const dadosEndereco = Utilidades.gerarDadosFakerEndereco()
+
+        Deliver.preencherDadosUsuario({
+            nomeCompleto: dadosUsuario.nomeCompleto,
+            cpf: dadosUsuario.cpf,
+            email: dadosUsuario.email,
+            telefone: dadosUsuario.telefone
+        })
+
+        Deliver.preencherEnderecoUsuario({
+            cep: dadosEndereco.cep,
+            numero: dadosEndereco.numero,
+            complemento: dadosEndereco.complemento
+        })
+
+        Deliver.selecionarMetodoEntrega('Bicicleta')
+
+        Deliver.efetuarUploadCnh({
+            caminhoArquivo: 'cypress/support/imagem/cnh.jpg',
+            nomeArquivo: 'cnh.jpg'
+        })
+
+        Deliver.validarCadastro()
+    })
+
+    it('Deve efetuar cadastro inserindo CNH com método de entrega Van/Carro', () => {
+
+        const dadosUsuario = Utilidades.gerarDadosFakerUsuario()
+        const dadosEndereco = Utilidades.gerarDadosFakerEndereco()
+
+        Deliver.preencherDadosUsuario({
+            nomeCompleto: dadosUsuario.nomeCompleto,
+            cpf: dadosUsuario.cpf,
+            email: dadosUsuario.email,
+            telefone: dadosUsuario.telefone
+        })
+
+        Deliver.preencherEnderecoUsuario({
+            cep: dadosEndereco.cep,
+            numero: dadosEndereco.numero,
+            complemento: dadosEndereco.complemento
+        })
+
+        Deliver.selecionarMetodoEntrega('Van/Carro')
+
+        Deliver.efetuarUploadCnh({
+            caminhoArquivo: 'cypress/support/imagem/cnh.jpg',
+            nomeArquivo: 'cnh.jpg'
+        })
+
+        Deliver.validarCadastro()
+    })
 })

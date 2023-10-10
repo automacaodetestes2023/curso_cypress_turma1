@@ -7,7 +7,6 @@
     "open": "npx cypress open",
     "testes": "cypress run --headless --browser chrome",
     "suite": "cypress run --headless --browser chrome --spec cypress/e2e/cadastro.cy.js"
-
   },
   "repository": {
     "type": "git",
